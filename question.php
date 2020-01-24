@@ -4,8 +4,8 @@ if(isset($_POST['do'])){
 	if($_POST['do'] == 'add')
 	{
 		
-		add_q($_POST['exid'],$_POST['question'],$_POST['a1'],$_POST['a2'],$_POST['a3'],$_POST['a4'],$_POST['answer'],$_POST['comments'],$_POST['pik']);
-		echo "<center><b>Question added succesfully</b></center>";
+		add_q($_POST['exid'],$_POST['question'],$_POST['a1'],$_POST['a2'],$_POST['a3'],$_POST['a4'],$_POST['answer'],$_POST['comments']/*,$_POST['pik']*/);
+		echo " <b>Question added succesfully</b> ";
 		include("question_form.php");
 	}
 	

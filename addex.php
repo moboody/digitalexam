@@ -46,7 +46,7 @@ else
 <?php include('header.php'); ?>
 
 <body>
-<center>
+ 
 <form action="addex.php" method="post" name="" id="">
  <?php echo"$extra" ?>
   <p>Add an exam
@@ -85,7 +85,7 @@ else
     <input type="submit" value="<?php echo"$subval" ?>">
   </p>
 </form>
-</center>
+ 
 </body>
 </html>
 <?php include('footer.php'); ?>

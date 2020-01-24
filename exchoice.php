@@ -29,8 +29,7 @@ for($i = 0; $i < $xnum; $i++)
 $xmen .= "</select>"
 ?>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+
 <?php include('header.php'); ?>
 
 <body>
@@ -42,6 +41,4 @@ $xmen .= "</select>"
   </form>
   <p>&nbsp; </p>
 </div>
-</body>
-</html>
 <?php include('footer.php'); ?>

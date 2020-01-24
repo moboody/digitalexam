@@ -4,7 +4,7 @@ $exid = $_GET['exid'];
 require('connect.php');
 $query = "SELECT * FROM questions WHERE eid='$exid' ORDER BY id";
 $titq = "SELECT * FROM exams WHERE id='$exid'";
-$results = mysqli_query($conn, $query) or die($query);
+$results = mysqli_query($conn, $query) or die($conn);
 $num = mysqli_num_rows($results);
 $ex = mysqli_fetch_object(mysqli_query($titq));
 
@@ -18,7 +18,7 @@ print("
 	<body>
 		
 		<form action=\"correction.php\" method=\"POST\">
-		<center>Name: <input type=\"text\" name=\"name\"><br/>
+		 Name: <input type=\"text\" name=\"name\"><br/>
 		Roll: <input type=\"text\" name=\"roll\"><br/>
 		<input type=\"hidden\" name=\"do\" value=\"correct\">
 		<input type=\"hidden\" name=\"q$i\" value=\"$quid\">
@@ -27,7 +27,7 @@ print("
 
 
 
-while($row = mysqli_fetch_assoc($ex)){
+while($row = mysqli_fetch_assoc($results)){
 	$quid = $row['id'];
 	$q = $row['q'];
 	$a1 = $row['a1'];
@@ -70,7 +70,7 @@ print("
 
 if($pik != -1)
 {
-	echo "<center><IMG SRC=\"getpik.php?pid=$pik\"></center><br>";
+	echo " <IMG SRC=\"getpik.php?pid=$pik\"> <br>";
 }
 
 print("
@@ -90,6 +90,6 @@ echo("<p class=\"comments\" align=\"left\">$comments</p>");
 echo("<br>
 <hr>");
 }
-print("<input type=\"hidden\" name=\"qnum\" value=\"$num\"><input type=\"hidden\" name=\"xamz\" value=\"$ex->title\"> <center> <input type=\"submit\" value=\"Submit for correction\"></center></form></body></html>");
+print("<input type=\"hidden\" name=\"qnum\" value=\"$num\"><input type=\"hidden\" name=\"xamz\" value=\"$ex->title\">   <input type=\"submit\" value=\"Submit for correction\"> </form></body></html>");
 include('footer.php');
 ?>

@@ -9,16 +9,16 @@ $xnum = mysqli_num_rows($ex);
 
 
 <body>
-<center><h2>Exams</h2></center>
-<center>
-<table width="331" border="1">
+ <h2>Exams</h2> 
+ 
+<table width="331" border="1" style="margin:auto">
   <tr>
     <th width="176" scope="col">Title</th>
     <th width="78" scope="col">Date</th>
     <th width="20" scope="col">Delete</th>
     <th width="29" scope="col">Edit</th>
   </tr>
-  </center>
+   
 
 
 <?php

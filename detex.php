@@ -34,17 +34,17 @@ die(mysqli_error());
 */
 //while ($goa=mysqli_fetch_array($za, mysqli_ASSOC)){
 // Table
-//echo "<center><b>{$goa['THANA']}   :   $eiin</b></center> ";
+//echo " <b>{$goa['THANA']}   :   $eiin</b>  ";
 //}
 
 //echo "<br/>";
-echo "<center><table border=\"0\"><tr style=\"font-size: 20px;
+echo " <table border=\"0\"><tr style=\"font-size: 20px;
 color: #000;\">
 <td width=\"100\" ><b>ROLL</b></td>
 <td width=\"200\" ><b>NAME</b></td>
 <td width=\"300\"><b>EXAM NAME</b></td>
 <td width=\"100\"><b>RESULT</b></td>
-</tr></table></center>";
+</tr></table> ";
 echo "<!--";
 echo "-->";
 while ($row1=mysqli_fetch_array($za, mysqli_ASSOC))
@@ -71,7 +71,7 @@ if ($ss==="1") {
 $se="Female";
 }*/
 // Printing result
-echo  "<center><table border=\"1\">
+echo  " <table border=\"1\">
 
 ";
 echo"
@@ -81,7 +81,7 @@ echo"
 <td width=\"300\"><b>{$row1['examname']}</b></td>
 <td width=\"100\"><b>{$row1['score']}</b></td>
 </tr>
-</table></center>";
+</table> ";
 
 }
 
@@ -91,7 +91,7 @@ echo"
 else
 {
 // Printing form
-echo "<center><b>Please enter students roll to check result</b><br/><br/><form method=\"post\" action=\"$self\">Roll: <input type=\"text\"   name=\"roll\" value=\"\"><br/><input type=\"submit\" name=\"go\" value=\"Check\"></form><center>";
+echo " <b>Please enter students roll to check result</b><br/><br/><form method=\"post\" action=\"$self\">Roll: <input type=\"text\"   name=\"roll\" value=\"\"><br/><input type=\"submit\" name=\"go\" value=\"Check\"></form> ";
 }
 // HTML Footer
 include("footer.php");

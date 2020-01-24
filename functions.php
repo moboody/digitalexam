@@ -9,7 +9,7 @@ function add_q($eid,$q,$a1,$a2,$a3,$a4,$correct,$comments,$pic) {
 	}
 	$query = "INSERT INTO questions VALUES('','".addslashes($eid)."','".addslashes($q)."','".addslashes($a1)."','".addslashes($a2)."','".addslashes($a3)."','".addslashes($a4)."','".addslashes($correct)."','".addslashes($comments)."','".addslashes($pic_id)."')";
 	mysqli_query($conn, $query) or die($query);
-	mysqli_close();
+	mysqli_close($conn);
 }
 
 function add_photo($Picture){

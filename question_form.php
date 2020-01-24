@@ -27,7 +27,7 @@ $xmen .= "</select>"
 
 <?php include('header.php'); ?>
 
-<center>
+ 
 <body bgcolor="#FFFFFF" text="#000000">
 <form method="post" action="">
   <p>
@@ -65,6 +65,6 @@ $xmen .= "</select>"
   </p>
 
 </form>
-</center>
+ 
 </body>
 </html>

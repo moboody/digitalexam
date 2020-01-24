@@ -11,15 +11,15 @@ $sqlq='SELECT * FROM `student` WHERE `name` LIKE "$name" ';
 $runq=mysqli_query($conn, $sqlq);
 $numr=mysqli_num_rows($runq);
 if (!$numr==1) {
-echo "<center><h1><font color=\"red\">This is not an AUTHENTIC certificate</font></h1></center>";
+echo " <h1><font color=\"red\">This is not an AUTHENTIC certificate</font></h1> ";
 echo "$numr";
 }
 else {
-echo "<center><h1><font color=\"green\">This is  an AUTHENTIC certificate</font></h1></center>";
+echo " <h1><font color=\"green\">This is  an AUTHENTIC certificate</font></h1> ";
 }
 }
 else {
-echo "<center><form action=\"$self\" method=\"get\">Name: <input type=\"text\" name=\"name\"><br/>Roll: <input type=\"text\" name=\"roll\"><br/>Score: <input type=\"text\" name=\"score\"><br/><input type=\"submit\" name=\"sub\" value=\"Verify\"><br/></form></center>";
+echo " <form action=\"$self\" method=\"get\">Name: <input type=\"text\" name=\"name\"><br/>Roll: <input type=\"text\" name=\"roll\"><br/>Score: <input type=\"text\" name=\"score\"><br/><input type=\"submit\" name=\"sub\" value=\"Verify\"><br/></form> ";
 }
 include('footer.php');
 ?>

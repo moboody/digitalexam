@@ -1,4 +1,10 @@
-
+html, body{
+    margin: 0px 10px;
+    height: 100%;
+}
+body{
+    text-align: center;
+}
 P.question {
 	font-family:Arial;
 	font-size:18;
@@ -31,8 +37,15 @@ color:#000099;
 text-decoration:underline;
 text-align:center;
 }
+
 #footer{
-    position: absolute;
-    bottom: 10px;
+    position: fixed;
+    bottom: 0px;
     width: 90%;
+    padding: 10px;
+    background-color: white;
+}
+
+label{
+    cursor: pointer;
 }

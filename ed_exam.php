@@ -6,7 +6,7 @@ else
 $exid = 1;
 require('connect.php');
 $query = "SELECT * FROM questions WHERE eid='$exid' ORDER BY id";
-$results = mysqli_query($conn, $query) or die($query);
+$results = mysqli_query($conn, $query) or die(mysqli_error($query));
 $num = mysqli_num_rows($results);
 
 include_once "functions.php";
@@ -46,13 +46,17 @@ for($i = 0; $i < $xnum; $i++)
 }
 $xmen .= "</select>";
 
-print("<html>
-<body>
-<center><form action=\"\" method=\"get\">$xmen<span><input type=\"submit\" value=\"go\"></span></form></center>
+?>
 
-");
+<form method="get">
+    <?= $xmen ?>
+    <span><input type="submit" value="go"></span>
+</form>
 
-while($row = mysqli_fetch_assoc($ex)){
+
+<?php
+
+while($row = mysqli_fetch_assoc($results)){
 	$quid = $row['id'];
 	$q = $row['q'];
 	$a1 = $row['a1'];
@@ -82,32 +86,38 @@ for($i = 0; $i < $num; $i++){
     
 	$j = $i + 1;
 
-print("
-<script language=\"javascript\">
-<!--
-   function confdel$quid(){
-   if(confirm('Are you sure you want to delete question $j?'))
-   document.del$quid.submit();
-   }
-// -->
+?>
+<script>
+    <!--
+    function confdel$quid() {
+        if (confirm('Are you sure you want to delete question $j?'))
+            document.del$quid.submit();
+    }
+    // 
+
+    -->
 </script>
 <br>
-<center>
-<h2>Question $j 
-<form action=\"question.php\" method=\"POST\">
-<input type=\"hidden\" name=\"do\" value=\"edit\">
-<input type=\"hidden\" name=\"qid\" value=\"$quid\">
-<input type=\"submit\" value=\"edit\">
-</form>
-<form action=\"question.php\" method=\"POST\" name=\"del$quid\">
-<input type=\"hidden\" name=\"do\" value=\"del\">
-<input type=\"hidden\" name=\"qid\" value=\"$quid\">
-<input type=\"hidden\" name=\"exid\" value=\"$exid\">
-<input type=\"button\" value=\"Delete\" onClick=\"javascript:confdel$quid()\">
-</form>
-</h2>
-<hr>
-<h3>$q</h3>");
+
+
+<fieldset style="text-align:left">
+    <legend> <?= $j ?> </legend>
+
+
+    <form action="question.php" method="POST" style="display:inline">
+        <input type="hidden" name="do" value="edit">
+        <input type="hidden" name="qid" value="<?= $quid ?>">
+        <input type="submit" value="edit">
+    </form>
+    <form action="question.php" method="POST" name="del<?= $quid ?>"  style="display:inline">
+        <input type="hidden" name="do" value="del">
+        <input type="hidden" name="qid" value="<?= $quid ?>">
+        <input type="hidden" name="exid" value="<?= $exid ?>">
+        <input type="button" value="Delete" onClick="javascript:confdel<?= $quid ?>()">
+    </form>
+    <hr>
+    <h3><?= $q ?></h3>
+    <?php
 
 if($pik != -1)
 {
@@ -130,26 +140,20 @@ switch($correct)
 		break;
 }
 
-print("
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<div align=\"justify\">
-<label><input $c1 type=\"radio\">$a1</label><br>
-<label><input $c2 type=\"radio\">$a2</label><br>
-<label><input $c3 type=\"radio\">$a3</label><br>
-<label><input $c4 type=\"radio\">$a4</label><br>
-</div>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<br>
-<hr>
-");
+?>
+
+    <blockquote>
+        <div align="justify">
+            <label><input <?= $c1 ?> disabled type="radio"><?= $a1 ?></label><br>
+            <label><input <?= $c2 ?> disabled type="radio"><?= $a2 ?></label><br>
+            <label><input <?= $c3 ?> disabled type="radio"><?= $a3 ?></label><br>
+            <label><input <?= $c4 ?> disabled type="radio"><?= $a4 ?></label><br>
+        </div>
+    </blockquote>
+
+</fieldset>
+
+<?php
 }
 include ('footer.php');
 ?>
