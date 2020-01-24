@@ -35,7 +35,7 @@ echo "<center>";
 	}
 	$score="$points/$num";
 	$query_z="INSERT into `student` (name,roll,score,examname) VALUES ('$name','$roll','$score','$examname')";
-        if(@mysql_query($query_z)) {
+        if(@mysqli_query($conn, $query_z)) {
 	echo("<hr>You got <b><font color=\"blue\">$points/$num</font></b>");
 	echo "</center>";
 	echo "<br/><br/><center><form action=\"certificate.php\" method=\"post\"><input type=\"hidden\" name=\"nname\" value=\"$name\"><input type=\"hidden\" name=\"rroll\" value=\"$roll\"><input type=\"hidden\" name=\"sscore\" value=\"$score\"><input type=\"hidden\" name=\"xxam\" value=\"$examname\"><input type=\"submit\" name=\"getca\" value=\"Get Certificate\"></form></center>";

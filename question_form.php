@@ -1,16 +1,27 @@
 <?php
 include_once "functions.php";
 $exs = get_ex();
-$xnum = mysql_num_rows($exs);
+$xnum = mysqli_num_rows($exs);
 $xmen = "<select name=\"exid\">
 	<option selected>Select Exam</option>\n";
-for($i = 0; $i < $xnum; $i++)
-{
-	$title = mysql_result($exs,$i,'title');
-	$id = mysql_result($exs,$i,'id');
-	$dat = mysql_result($exs, $i,'date');
+
+while($row = mysqli_fetch_assoc($exs)){
+	$title = $row['title'];
+	$id = $row['id'];
+	$dat = $row['date'];
 	$xmen .= "	<option value=\"$id\">$title ($dat)</option>\n";
 }
+
+/*
+for($i = 0; $i < $xnum; $i++)
+{
+	$title = mysqli_result($exs,$i,'title');
+	$id = mysqli_result($exs,$i,'id');
+	$dat = mysqli_result($exs, $i,'date');
+	$xmen .= "	<option value=\"$id\">$title ($dat)</option>\n";
+}
+*/
+
 $xmen .= "</select>"
 ?>
 

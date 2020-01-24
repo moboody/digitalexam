@@ -9,19 +9,35 @@ require("connect.php");
 
 if ($_POST['go']) {
 $roll=$_POST['roll'];
+// Escaping SQL Injection
+//$eiin=mysqli_real_escape_string($ein);
 
+//settype($eiin, 'string');
 $self=$_SERVER['PHP_SELF'];
 
 
 
 
- 
+ // SQL(s)
+//$link_id = db_connect();
 $sql="SELECT * FROM `student` WHERE `roll`='$roll'";
-$za=mysql_query($sql);
+//$sch="SELECT * FROM `schlorship` WHERE `T_CODE`='$eiin' LIMIT 1";
+$za=mysqli_query($conn, $sql);
 if (!$za) {
-die(mysql_error());
+die(mysqli_error());
 }
+//$namee=mysqli_query($sql);
+/*if(!$namee)
+{
+die(mysqli_error());
+}
+*/
+//while ($goa=mysqli_fetch_array($za, mysqli_ASSOC)){
+// Table
+//echo "<center><b>{$goa['THANA']}   :   $eiin</b></center> ";
+//}
 
+//echo "<br/>";
 echo "<center><table border=\"0\"><tr style=\"font-size: 20px;
 color: #000;\">
 <td width=\"100\" ><b>ROLL</b></td>
@@ -31,9 +47,30 @@ color: #000;\">
 </tr></table></center>";
 echo "<!--";
 echo "-->";
-while ($row1=mysql_fetch_array($za, MYSQL_ASSOC))
+while ($row1=mysqli_fetch_array($za, mysqli_ASSOC))
 {
-
+// Counting rows
+//$num=mysqli_num_rows($za);
+// Defining scholarship type
+/*$aa="{$row1['STATUS']}";
+if ($aa===""){
+$res="N/A";
+}
+if ($aa==="TWMC") {
+$res="TALENT";
+}
+if ($aa==="GWMC") {
+$res="GENERAL";
+}
+// Defining SEX
+$ss="{$row1['SEX']}";
+if ($ss==="0") {
+$se="Male";
+}
+if ($ss==="1") {
+$se="Female";
+}*/
+// Printing result
 echo  "<center><table border=\"1\">
 
 ";

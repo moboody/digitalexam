@@ -1,0 +1,18 @@
+[21-Mar-2015 14:03:35 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/hostingt/public_html/json/detex.php on line 13
+[21-Mar-2015 14:07:25 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/hostingt/public_html/json/detex.php on line 17
+[21-Mar-2015 14:08:40 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/hostingt/public_html/json/detex.php on line 18
+[21-Mar-2015 14:11:37 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/hostingt/public_html/json/detex.php on line 18
+[21-Mar-2015 16:21:05 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/hostingt/public_html/json/certificate.php on line 97
+[21-Mar-2015 16:48:29 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/hostingt/public_html/json/verify.php on line 9
+[21-Mar-2015 16:49:36 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/hostingt/public_html/json/verify.php on line 9
+[21-Mar-2015 16:50:05 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/hostingt/public_html/json/verify.php on line 9
+[21-Mar-2015 16:50:32 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/hostingt/public_html/json/verify.php on line 9
+[21-Mar-2015 16:51:32 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/hostingt/public_html/json/verify.php on line 9
+[21-Mar-2015 16:52:02 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/hostingt/public_html/json/verify.php on line 9
+[21-Mar-2015 17:08:00 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home/hostingt/public_html/json/verify.php on line 11
+[21-Mar-2015 17:08:08 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home/hostingt/public_html/json/verify.php on line 11
+[21-Mar-2015 17:13:28 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/hostingt/public_html/json/verify.php on line 13
+[21-Mar-2015 17:13:30 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/hostingt/public_html/json/verify.php on line 13
+[21-Mar-2015 17:13:52 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/hostingt/public_html/json/verify.php on line 13
+[21-Mar-2015 17:14:02 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/hostingt/public_html/json/verify.php on line 13
+[21-Mar-2015 17:18:12 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/hostingt/public_html/json/verify.php on line 13

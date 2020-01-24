@@ -1,8 +1,8 @@
 <?php
 $query = "SELECT * FROM exams ORDER BY id";
 require("connect.php");
-$ex = mysql_query($query) or die($query);
-$xnum = mysql_num_rows($ex);
+$ex = mysqli_query($conn, $query) or die($query);
+$xnum = mysqli_num_rows($ex);
 ?>
 
 <?php include('header.php'); ?>
@@ -22,12 +22,27 @@ $xnum = mysql_num_rows($ex);
 
 
 <?php
+    
+    
+while($row = mysqli_fetch_assoc($ex)){
+	$title = $row['title'];
+	$id = $row['id'];
+	$date = $row['date'];
+    
+    
+    
+   /* 
 for($i = 0; $i < $xnum; $i++)
 {
 
-	$id = mysql_result($ex,$i,'id');
-	$title = mysql_result($ex,$i,'title');
-	$date = mysql_result($ex,$i,'date');
+	$id = mysqli_result($ex,$i,'id');
+	$title = mysqli_result($ex,$i,'title');
+	$date = mysqli_result($ex,$i,'date');
+    */
+    
+    
+    
+    
 	echo("
 	<script language=\"javascript\">
 <!--

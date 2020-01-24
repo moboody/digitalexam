@@ -6,19 +6,42 @@ else
 $exid = 1;
 require('connect.php');
 $query = "SELECT * FROM questions WHERE eid='$exid' ORDER BY id";
-$results = mysql_query($query) or die($query);
-$num = mysql_num_rows($results);
+$results = mysqli_query($conn, $query) or die($query);
+$num = mysqli_num_rows($results);
 
 include_once "functions.php";
 $exs = get_ex();
-$xnum = mysql_num_rows($exs);
+$xnum = mysqli_num_rows($exs);
 $xmen = "<select name=\"exid\">
 	<option selected>Select Exam</option>\n";
+
+
+
+
+while($row = mysqli_fetch_assoc($exs)){
+	$title = $row['title'];
+	$id = $row['id'];
+	$dat = $row['date'];
+    
+
+
+
+/*
+
 for($i = 0; $i < $xnum; $i++)
 {
-	$title = mysql_result($exs,$i,'title');
-	$id = mysql_result($exs,$i,'id');
-	$dat = mysql_result($exs, $i,'date');
+	$title = mysqli_result($exs,$i,'title');
+	$id = mysqli_result($exs,$i,'id');
+	$dat = mysqli_result($exs, $i,'date');
+    
+    */
+    
+    
+    
+    
+    
+    
+    
 	$xmen .= "	<option value=\"$id\">$title ($dat)</option>\n";
 }
 $xmen .= "</select>";
@@ -28,16 +51,35 @@ print("<html>
 <center><form action=\"\" method=\"get\">$xmen<span><input type=\"submit\" value=\"go\"></span></form></center>
 
 ");
+
+while($row = mysqli_fetch_assoc($ex)){
+	$quid = $row['id'];
+	$q = $row['q'];
+	$a1 = $row['a1'];
+	$a2 = $row['a2'];
+	$a3 = $row['a3'];
+	$a4 = $row['a4'];
+	$comments = $row['comments'];
+	$correct = $row['correct'];
+	$pik = $row['pic'];
+    
+
+/*
 for($i = 0; $i < $num; $i++){
-	$quid = mysql_result($results,$i,'id');
-	$q = mysql_result($results,$i,'q');
-	$a1 = mysql_result($results,$i,'a1');
-	$a2 = mysql_result($results,$i,'a2');
-	$a3 = mysql_result($results,$i,'a3');
-	$a4 = mysql_result($results,$i,'a4');
-	$comments = mysql_result($results,$i,'comments');
-	$correct = mysql_result($results,$i,'correct');
-	$pik = mysql_result($results,$i,'pic');
+	$quid = mysqli_result($results,$i,'id');
+	$q = mysqli_result($results,$i,'q');
+	$a1 = mysqli_result($results,$i,'a1');
+	$a2 = mysqli_result($results,$i,'a2');
+	$a3 = mysqli_result($results,$i,'a3');
+	$a4 = mysqli_result($results,$i,'a4');
+	$comments = mysqli_result($results,$i,'comments');
+	$correct = mysqli_result($results,$i,'correct');
+	$pik = mysqli_result($results,$i,'pic');
+    
+    */
+    
+    
+    
 	$j = $i + 1;
 
 print("

@@ -8,8 +8,8 @@ $score=urldecode($_GET['score']);
 $self=$_SERVER['PHP_SELF'];
 if ($_GET['sub']) {
 $sqlq='SELECT * FROM `student` WHERE `name` LIKE "$name" ';
-$runq=mysql_query($sqlq);
-$numr=mysql_num_rows($runq);
+$runq=mysqli_query($conn, $sqlq);
+$numr=mysqli_num_rows($runq);
 if (!$numr==1) {
 echo "<center><h1><font color=\"red\">This is not an AUTHENTIC certificate</font></h1></center>";
 echo "$numr";

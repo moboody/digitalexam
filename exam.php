@@ -4,9 +4,9 @@ $exid = $_GET['exid'];
 require('connect.php');
 $query = "SELECT * FROM questions WHERE eid='$exid' ORDER BY id";
 $titq = "SELECT * FROM exams WHERE id='$exid'";
-$results = mysql_query($query) or die($query);
-$num = mysql_num_rows($results);
-$ex = mysql_fetch_object(mysql_query($titq));
+$results = mysqli_query($conn, $query) or die($query);
+$num = mysqli_num_rows($results);
+$ex = mysqli_fetch_object(mysqli_query($titq));
 
 print("
 <html>
@@ -24,15 +24,41 @@ print("
 		<input type=\"hidden\" name=\"q$i\" value=\"$quid\">
 		<H1>$ex->title ($ex->date)</H1>
 		<hr>");
+
+
+
+while($row = mysqli_fetch_assoc($ex)){
+	$quid = $row['id'];
+	$q = $row['q'];
+	$a1 = $row['a1'];
+	$a2 = $row['a2'];
+	$a3 = $row['a3'];
+	$a4 = $row['a4'];
+	$comments = $row['comments'];
+	$pik = $row['pic'];
+    
+
+
+
+
+/*
+
 for($i = 0; $i < $num; $i++){
-	$quid = mysql_result($results,$i,'id');
-	$q = mysql_result($results,$i,'q');
-	$a1 = mysql_result($results,$i,'a1');
-	$a2 = mysql_result($results,$i,'a2');
-	$a3 = mysql_result($results,$i,'a3');
-	$a4 = mysql_result($results,$i,'a4');
-	$comments = mysql_result($results,$i,'comments');
-	$pik = mysql_result($results,$i,'pic');
+	$quid = mysqli_result($results,$i,'id');
+	$q = mysqli_result($results,$i,'q');
+	$a1 = mysqli_result($results,$i,'a1');
+	$a2 = mysqli_result($results,$i,'a2');
+	$a3 = mysqli_result($results,$i,'a3');
+	$a4 = mysqli_result($results,$i,'a4');
+	$comments = mysqli_result($results,$i,'comments');
+	$pik = mysqli_result($results,$i,'pic');
+    
+    
+    */
+    
+    
+    
+    
 	$j = $i + 1;
 
 print("
